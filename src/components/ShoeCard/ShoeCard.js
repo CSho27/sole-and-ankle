@@ -45,6 +45,8 @@ const ShoeCard = ({
         <Row>
           <ColorInfo>{pluralize('Color', numOfColors)}</ColorInfo>
         </Row>
+        {variant === 'new-release' && <Notice variant={variant}>Just released!</Notice>}
+        {variant === 'on-sale' && <Notice variant={variant}>Sale</Notice>}
       </Wrapper>
     </Link>
   );
@@ -55,7 +57,9 @@ const Link = styled.a`
   color: inherit;
 `;
 
-const Wrapper = styled.article``;
+const Wrapper = styled.article`
+  position: relative;
+`;
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -80,6 +84,21 @@ const Price = styled.span``;
 const ColorInfo = styled.p`
   color: ${COLORS.gray[700]};
 `;
+
+const Notice = styled.div`
+  background-color: ${p => p.variant === 'new-release' 
+    ? COLORS.secondary 
+    : p.variant === 'on-sale' 
+      ? COLORS.primary 
+      : undefined};
+  position: absolute;
+  top: 8px;
+  right: -4px;
+  border-radius: 2px;
+  font-size: 12px;
+  color: white;
+  padding: 4px 8px;
+`
 
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
