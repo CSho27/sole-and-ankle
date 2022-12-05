@@ -32,6 +32,8 @@ const MainHeader = styled.div`
   border-bottom: 1px solid ${COLORS.gray[300]};
   display: flex;
   gap: 16px;
+  height: 72px;
+  align-items: center;
 `;
 
 const LogoWrappper = styled.div`
