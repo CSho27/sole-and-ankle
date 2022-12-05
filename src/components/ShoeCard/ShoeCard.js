@@ -77,6 +77,8 @@ const Row = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  width: 100%;
+  overflow: hidden;
 `;
 
 const Name = styled.h3`
@@ -85,6 +87,7 @@ const Name = styled.h3`
   flex: 1 1 fit-content;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const Price = styled.span`
